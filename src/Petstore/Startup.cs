@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,10 +23,16 @@ namespace Petstore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(j =>
+                {
+                    j.JsonSerializerOptions.WriteIndented = true;
+                    j.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+                });
 
             services.AddSwaggerGen(c =>
             {
+                c.EnableAnnotations();
                 c.CustomSchemaIds(t => t.FullName);
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
