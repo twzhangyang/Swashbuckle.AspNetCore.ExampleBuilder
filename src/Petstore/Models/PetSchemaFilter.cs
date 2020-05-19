@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.ExampleBuilder;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Petstore.Models
@@ -37,6 +38,23 @@ namespace Petstore.Models
                 },
                 ["status"] = new OpenApiString(Pet.StatusEnum.AvailableEnum.ToString())
             };
+        }
+    }
+    
+    public class PetSchemaByBuilderFilter : ISchemaFilter
+    {
+        private readonly IOpenApiObjectBuilder _objectBuilder;
+
+        public PetSchemaByBuilderFilter(IOpenApiObjectBuilder objectBuilder)
+        {
+            _objectBuilder = objectBuilder;
+        }
+        
+        public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+        {
+            var pet = new PetCreator().Create();
+
+            schema.Example = _objectBuilder.Build(pet);
         }
     }
 }

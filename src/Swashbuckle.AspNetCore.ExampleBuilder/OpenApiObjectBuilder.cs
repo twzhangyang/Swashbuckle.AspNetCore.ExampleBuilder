@@ -8,17 +8,12 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
     {
         public OpenApiObject Build(object o)
         {
-            if (!o.GetType().IsClass)
-            {
-                throw new ArgumentException("waiting for input a class object");
-            }
+            var propertiesGraph = new PropertiesTraverser(o).Walk();
+            var openApiObject = new OpenApiObject();
 
-            var properties = o.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
-            
-            return new OpenApiObject()
-            {
-                ["hell"] = new OpenApiString("hello")
-            }; 
+            new PropertiesGraphTransform().TransformToOpenApiObject(propertiesGraph, openApiObject, null);
+
+            return openApiObject;
         }
     }
 }

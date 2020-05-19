@@ -14,7 +14,8 @@ namespace Petstore.Models
     /// 
     /// </summary>
     [DataContract]
-    [SwaggerSchemaFilter(typeof(PetSchemaFilter))]
+    // [SwaggerSchemaFilter(typeof(PetSchemaFilter))]
+    [SwaggerSchemaFilter(typeof(PetSchemaByBuilderFilter))]
     public partial class Pet : IEquatable<Pet>
     {
         /// <summary>

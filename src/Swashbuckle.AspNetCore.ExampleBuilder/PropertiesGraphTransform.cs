@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using Microsoft.OpenApi.Any;
 
@@ -7,7 +6,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
 {
     public class PropertiesGraphTransform
     {
-        public void TransformToOpenApiObject(PropertiesGraph graph, OpenApiObject root)
+        public void TransformToOpenApiObject(PropertiesGraph graph, OpenApiObject root, OpenApiArray openApiArray)
         {
             foreach (var property in graph.SimpleValueProperties)
             {
@@ -20,8 +19,10 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
             foreach (var property in graph.ObjectProperties)
             {
                 var item = new OpenApiObject();
-                TransformToOpenApiObject(property, item);
-                root.Add(property.PropertyName, item);
+                TransformToOpenApiObject(property, item, openApiArray);
+
+                root?.Add(property.PropertyName, item);
+                openApiArray?.Add(item);
             }
 
             foreach (var arrayProperty in graph.ArrayProperties)
@@ -29,10 +30,19 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
                 var items = new OpenApiArray();
                 foreach (var property in arrayProperty.Value)
                 {
-                    var item = new OpenApiObject();
-                    TransformToOpenApiObject(property, item);
-                    items.Add(item);
+                    if (property.PropertyType.IsSimpleType())
+                    {
+                        var propertyItem = property.SimpleValueProperties.First();
+                        var openApiAny = GetOpenApiType(propertyItem);
+                        items.Add(openApiAny);
+                    }
+                    else
+                    {
+                        TransformToOpenApiObject(property, null, items);
+                    }
                 }
+
+                root.Add(arrayProperty.Key, items);
             }
         }
 
@@ -89,6 +99,11 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
             if (t == typeof(bool))
             {
                 return new OpenApiBoolean(Convert.ToBoolean(value));
+            }
+
+            if (t == typeof(byte))
+            {
+                return new OpenApiByte(Convert.ToByte(value));
             }
 
             return new OpenApiObject();
