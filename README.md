@@ -1,4 +1,6 @@
-## Swashbuckle.AspNetCore.ExampleBuilder
+[![Build Status](https://dev.azure.com/restairline/restairline/_apis/build/status/twzhangyang.Swashbuckle.AspNetCore.ExampleBuilder?branchName=master)](https://dev.azure.com/restairline/restairline/_build/latest?definitionId=6&branchName=master)
+
+## Why Swashbuckle.AspNetCore.ExampleBuilder
 
 As we know, swagger is a good tool that help us document apis,  api consumers can use it complete api integration. 
 Generally the more swagger was written completed the more convenient  for API consumers.
