@@ -20,9 +20,14 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
             {
                 var item = new OpenApiObject();
                 TransformToOpenApiObject(property, item, openApiArray);
-
-                root?.Add(property.PropertyName, item);
-                openApiArray?.Add(item);
+                if (root == null)
+                {
+                    openApiArray.Add(item);
+                }
+                else
+                {
+                    root.Add(property.PropertyName, item);
+                }
             }
 
             foreach (var arrayProperty in graph.ArrayProperties)

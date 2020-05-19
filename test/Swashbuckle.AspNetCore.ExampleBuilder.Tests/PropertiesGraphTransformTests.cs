@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Microsoft.OpenApi.Any;
 using NUnit.Framework;
+using Swashbuckle.AspNetCore.ExampleBuilder.Tests.Models;
 
 namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
 {
@@ -11,6 +12,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
         {
             //Arrange
             var pet = new PetCreator().Create();
+            
             var graph = new PropertiesTraverser(pet).Walk();
             var root = new OpenApiObject();
 

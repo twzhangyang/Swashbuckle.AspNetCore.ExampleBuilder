@@ -32,6 +32,12 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
 
         private void Walk(PropertiesGraph graph, string propertyName, object o, Type type)
         {
+            if (o == null)
+            {
+               graph.AddSimpleValueProperty(propertyName, null, type);
+               return;
+            }
+            
             if (type.IsSimpleType())
             {
                 var t = type.IsGenericType ? type.GetGenericArguments()[0] : type;
