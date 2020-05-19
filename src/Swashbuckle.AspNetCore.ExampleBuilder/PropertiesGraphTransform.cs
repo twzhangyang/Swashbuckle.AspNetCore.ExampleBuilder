@@ -5,9 +5,9 @@ using Microsoft.OpenApi.Any;
 
 namespace Swashbuckle.AspNetCore.ExampleBuilder
 {
-    public class PropertiesGraphTraverser
+    public class PropertiesGraphTransform
     {
-        public void TraverseProperty(PropertiesGraph graph, OpenApiObject root)
+        public void TransformToOpenApiObject(PropertiesGraph graph, OpenApiObject root)
         {
             foreach (var property in graph.SimpleValueProperties)
             {
@@ -20,7 +20,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
             foreach (var property in graph.ObjectProperties)
             {
                 var item = new OpenApiObject();
-                TraverseProperty(property, item);
+                TransformToOpenApiObject(property, item);
                 root.Add(property.PropertyName, item);
             }
 
@@ -30,7 +30,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
                 foreach (var property in arrayProperty.Value)
                 {
                     var item = new OpenApiObject();
-                    TraverseProperty(property, item);
+                    TransformToOpenApiObject(property, item);
                     items.Add(item);
                 }
             }

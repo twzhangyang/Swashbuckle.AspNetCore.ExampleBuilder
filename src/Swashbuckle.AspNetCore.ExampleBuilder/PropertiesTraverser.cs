@@ -4,11 +4,11 @@ using System.Reflection;
 
 namespace Swashbuckle.AspNetCore.ExampleBuilder
 {
-    public class PropertiesWalker
+    public class PropertiesTraverser
     {
         private readonly object _o;
 
-        public PropertiesWalker(object o)
+        public PropertiesTraverser(object o)
         {
             _o = o;
         }
