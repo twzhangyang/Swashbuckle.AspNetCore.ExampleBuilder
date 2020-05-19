@@ -43,7 +43,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
 
                 foreach (var item in o as Array)
                 {
-                    var itemNode = new PropertiesGraph(propertyName, item, type);
+                    var itemNode = new PropertiesGraph(null, item, item.GetType());
                     graph.AddArrayProperty(propertyName, itemNode);
 
                     Walk(itemNode, null, item, nestedType);
@@ -55,7 +55,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
 
                 foreach (var item in o as IEnumerable)
                 {
-                    var itemNode = new PropertiesGraph(propertyName, item, type);
+                    var itemNode = new PropertiesGraph(null, item, item.GetType());
                     graph.AddArrayProperty(propertyName, itemNode);
 
                     Walk(itemNode, null, item, nestedType);

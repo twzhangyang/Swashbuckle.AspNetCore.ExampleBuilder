@@ -25,7 +25,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
                 Tags = new List<Tag>
                 {
                     new Tag {Id = 1111, Name = "tag1"},
-                    new Tag {Id = 222, Name = "tag2"}
+                    new Tag {Id = 2222, Name = "tag2"}
                 }
             };
             return pet;
