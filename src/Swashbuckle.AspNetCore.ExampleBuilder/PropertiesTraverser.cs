@@ -1,12 +1,17 @@
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Swashbuckle.AspNetCore.ExampleBuilder
 {
     public class PropertiesTraverser
     {
         private readonly object _o;
+
+        private static ConcurrentDictionary<Type, PropertiesGraph> _cache =
+            new ConcurrentDictionary<Type, PropertiesGraph>();
 
         public PropertiesTraverser(object o)
         {
@@ -19,25 +24,28 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
             {
                 throw new ArgumentException("waiting input class object");
             }
-
-            var graph = new PropertiesGraph(null, _o, _o.GetType());
-            var properties = _o.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach (var property in properties)
+            
+            return _cache.GetOrAdd(_o.GetType(), t =>
             {
-                Walk(graph, property.Name, property.GetValue(_o), property.PropertyType);
-            }
+                var graph = new PropertiesGraph(null, _o, t);
+                var properties = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                foreach (var property in properties)
+                {
+                    Walk(graph, property.Name, property.GetValue(_o), property.PropertyType);
+                }
 
-            return graph;
+                return graph;
+            });
         }
 
         private void Walk(PropertiesGraph graph, string propertyName, object o, Type type)
         {
             if (o == null)
             {
-               graph.AddSimpleValueProperty(propertyName, null, type);
-               return;
+                graph.AddSimpleValueProperty(propertyName, null, type);
+                return;
             }
-            
+
             if (type.IsSimpleType())
             {
                 var t = type.IsGenericType ? type.GetGenericArguments()[0] : type;
