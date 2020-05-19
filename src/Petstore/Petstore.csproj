@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Builder" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Swashbuckle.AspNetCore.ExampleBuilder\Swashbuckle.AspNetCore.ExampleBuilder.csproj" />
   </ItemGroup>
 
