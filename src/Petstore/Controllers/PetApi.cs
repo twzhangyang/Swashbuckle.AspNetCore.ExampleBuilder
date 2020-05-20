@@ -25,6 +25,7 @@ namespace Petstore.Controllers
         [HttpPost]
         [ValidateModelState]
         [SwaggerOperation("AddPet")]
+        [SwaggerResponse(statusCode:200, type: typeof(AddPetResponse))]
         public virtual IActionResult AddPet([FromBody]Pet body)
         { 
             //TODO: Uncomment the next line to return response 405 or use other options such as return this.NotFound(), return this.BadRequest(..), ...

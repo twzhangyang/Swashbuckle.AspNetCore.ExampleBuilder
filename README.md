@@ -1,4 +1,5 @@
 ![.NET Core](https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder/workflows/.NET%20Core/badge.svg)
+![Nuget](https://img.shields.io/nuget/v/Swashbuckle.AspNetCore.ExampleBuilder)
 
 ## Why Swashbuckle.AspNetCore.ExampleBuilder
 
@@ -98,3 +99,21 @@ public class PetCreator
 }
 
 ```
+
+## 
+
+* Install Nuget package:
+
+```
+dotnet add package Swashbuckle.AspNetCore.ExampleBuilder --version 1.0.1
+```
+
+* Register services in DI container:
+``` c#
+services.AddTransient<IOpenApiObjectBuilder, OpenApiObjectBuilder>();
+```
+
+* Define SchemaFilter for request or response model
+* [See example](https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder/blob/master/src/Petstore/Models/PetSchemaFilter.cs)
+* Run Petstore api project in local, Api `POST /pet` have both request and response examples in swagger:
+

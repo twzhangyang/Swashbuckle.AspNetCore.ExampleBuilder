@@ -9,10 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Swashbuckle.AspNetCore.ExampleBuilder\Swashbuckle.AspNetCore.ExampleBuilder.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ExampleBuilder" Version="1.0.1" />
   </ItemGroup>
 
 
