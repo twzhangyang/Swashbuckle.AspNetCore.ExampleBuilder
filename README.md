@@ -116,4 +116,4 @@ services.AddTransient<IOpenApiObjectBuilder, OpenApiObjectBuilder>();
 * Define SchemaFilter for request or response model
 * [See example](https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder/blob/master/src/Petstore/Models/PetSchemaFilter.cs)
 * Run Petstore api project in local, Api `POST /pet` have both request and response examples in swagger:
-
+![example](https://user-images.githubusercontent.com/22952792/82415107-97325f00-9aaa-11ea-8fe4-bad4fb5a2c9e.png)
