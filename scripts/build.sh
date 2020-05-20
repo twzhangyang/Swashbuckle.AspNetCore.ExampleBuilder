@@ -14,6 +14,9 @@ do
   dotnet test $PROJECT
 done
 
+# pack nuget
+dotnet pack ./src/Swashbuckle.AspNetCore.ExampleBuilder/Swashbuckle.AspNetCore.ExampleBuilder.csproj -c Release -o ./artifacts
+
 
 
 

@@ -2,7 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <NoWarn>$(NoWarn);1591</NoWarn>
     </PropertyGroup>
+    
+    <Import Project="ExampleBuilder.targets" />
 
     <ItemGroup>
       <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
