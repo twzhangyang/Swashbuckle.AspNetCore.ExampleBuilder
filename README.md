@@ -100,7 +100,7 @@ public class PetCreator
 
 ```
 
-## 
+## Getting Started
 
 * Install Nuget package:
 
