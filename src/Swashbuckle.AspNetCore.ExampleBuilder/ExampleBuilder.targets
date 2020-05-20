@@ -13,5 +13,6 @@
     <RepositoryUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder</RepositoryUrl>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>swashbuckle;ISchemaFilter;exmaple builder</PackageTags>
   </PropertyGroup>
 </Project>
