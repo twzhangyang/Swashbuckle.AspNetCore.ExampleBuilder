@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/restairline/restairline/_apis/build/status/twzhangyang.Swashbuckle.AspNetCore.ExampleBuilder?branchName=master)](https://dev.azure.com/restairline/restairline/_build/latest?definitionId=6&branchName=master)
+![.NET Core](https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder/workflows/.NET%20Core/badge.svg)
 
 ## Why Swashbuckle.AspNetCore.ExampleBuilder
 
