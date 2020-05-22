@@ -4,6 +4,7 @@ set -eu
 set -o pipefail
 
 # build
+dotnet restore ./Swashbuckle.AspNetCore.ExampleBuilder.sln
 dotnet build ./Swashbuckle.AspNetCore.ExampleBuilder.sln
 
 # ut
