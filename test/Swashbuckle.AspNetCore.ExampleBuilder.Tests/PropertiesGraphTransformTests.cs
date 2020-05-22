@@ -1,3 +1,4 @@
+using System.Linq;
 using FluentAssertions;
 using Microsoft.OpenApi.Any;
 using NUnit.Framework;
@@ -17,10 +18,16 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
             var root = new OpenApiObject();
 
             //Act
-            new PropertiesGraphTransform().TransformToOpenApiObject(graph, root, null);
+            new PropertiesGraphTransformer(new ExampleSettings()).TransformToOpenApiObject(graph, root, null);
 
             //Assert
             root.Count.Should().Be(6);
+            root.Keys.Contains("id");
+            root.Keys.Contains("name");
+            root.Keys.Contains("status");
+            root.Keys.Contains("category");
+            root.Keys.Contains("tags");
+            root.Keys.Contains("photoUrls");
         }
     }
 }

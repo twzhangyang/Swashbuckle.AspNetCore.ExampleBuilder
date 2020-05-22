@@ -110,7 +110,14 @@ dotnet add package Swashbuckle.AspNetCore.ExampleBuilder --version 1.0.1
 
 * Register services in DI container:
 ``` c#
-services.AddTransient<IOpenApiObjectBuilder, OpenApiObjectBuilder>();
+services.AddSwaggerExampleBuilder();
+```
+
+* Disable camelcase 
+``` c#
+services.AddSwaggerExampleBuilder(s => {
+    s.Camelcase = false;
+})
 ```
 
 * Define SchemaFilter for request or response model

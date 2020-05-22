@@ -4,14 +4,21 @@ using Microsoft.OpenApi.Any;
 
 namespace Swashbuckle.AspNetCore.ExampleBuilder
 {
-    public class PropertiesGraphTransform
+    public class PropertiesGraphTransformer
     {
+        private readonly ExampleSettings _settings;
+
+        public PropertiesGraphTransformer(ExampleSettings settings)
+        {
+            _settings = settings;
+        }
+        
         public void TransformToOpenApiObject(PropertiesGraph graph, OpenApiObject root, OpenApiArray openApiArray)
         {
             foreach (var property in graph.SimpleValueProperties)
             {
                 var openApiAny = GetOpenApiType(property);
-                var name = property.PropertyName;
+                var name = GetName(property.PropertyName);
 
                 root.Add(name, openApiAny);
             }
@@ -26,7 +33,7 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
                 }
                 else
                 {
-                    root.Add(property.PropertyName, item);
+                    root.Add(GetName(property.PropertyName), item);
                 }
             }
 
@@ -47,9 +54,14 @@ namespace Swashbuckle.AspNetCore.ExampleBuilder
                     }
                 }
 
-                root.Add(arrayProperty.Key, items);
+                root.Add(GetName(arrayProperty.Key), items);
             }
         }
+        
+        private string GetName(string original)
+        {
+            return _settings.CamelCase ? original.FirstLower() : original;
+        } 
 
         private IOpenApiAny GetOpenApiType(PropertiesGraph.Property property)
         {
