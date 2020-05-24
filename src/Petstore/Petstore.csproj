@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Swashbuckle.AspNetCore.ExampleBuilder\Swashbuckle.AspNetCore.ExampleBuilder.csproj" />
+    <ProjectReference Include="..\Swashbuckle.AspNetCore.SchemaBuilder\Swashbuckle.AspNetCore.SchemaBuilder.csproj" />
   </ItemGroup>
 
 

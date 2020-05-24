@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Swashbuckle.AspNetCore.ExampleBuilder\Swashbuckle.AspNetCore.ExampleBuilder.csproj" />
+      <ProjectReference Include="..\..\src\Swashbuckle.AspNetCore.SchemaBuilder\Swashbuckle.AspNetCore.SchemaBuilder.csproj" />
     </ItemGroup>
 
 </Project>

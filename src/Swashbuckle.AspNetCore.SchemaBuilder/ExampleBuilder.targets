@@ -8,9 +8,9 @@
     <LangVersion>7.3</LangVersion>
     <NoWarn>$(NoWarn);1701;1702;1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <PackageProjectUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.SchemaBuilder</PackageProjectUrl>
     <Copyright>Copyright (c) .NET Foundation and contributors 2020</Copyright>
-    <RepositoryUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder</RepositoryUrl>
+    <RepositoryUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.SchemaBuilder</RepositoryUrl>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>swashbuckle;ISchemaFilter;exmaple builder</PackageTags>

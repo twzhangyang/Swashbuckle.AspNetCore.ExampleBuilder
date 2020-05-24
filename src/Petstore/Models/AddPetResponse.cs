@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Annotations;
-using Swashbuckle.AspNetCore.ExampleBuilder;
+using Swashbuckle.AspNetCore.SchemaBuilder;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Petstore.Models

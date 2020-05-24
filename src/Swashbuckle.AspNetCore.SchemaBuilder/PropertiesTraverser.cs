@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Reflection;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class PropertiesTraverser
     {

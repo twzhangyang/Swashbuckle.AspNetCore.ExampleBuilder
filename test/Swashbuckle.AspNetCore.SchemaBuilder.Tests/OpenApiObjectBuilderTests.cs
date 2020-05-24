@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using NUnit.Framework;
-using Swashbuckle.AspNetCore.ExampleBuilder.Tests.Models;
+using Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
+namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
 {
     public class OpenApiObjectBuilderTests
     {

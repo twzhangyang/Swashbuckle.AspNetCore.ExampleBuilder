@@ -1,8 +1,8 @@
 using FluentAssertions;
 using NUnit.Framework;
-using Swashbuckle.AspNetCore.ExampleBuilder.Tests.Models;
+using Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests
+namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
 {
     public class PropertiesTraverserTests
     {

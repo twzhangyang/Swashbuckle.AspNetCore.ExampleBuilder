@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Any;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public interface IOpenApiObjectBuilder
     {

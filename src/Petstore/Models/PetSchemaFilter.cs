@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.ExampleBuilder;
+using Swashbuckle.AspNetCore.SchemaBuilder;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Petstore.Models

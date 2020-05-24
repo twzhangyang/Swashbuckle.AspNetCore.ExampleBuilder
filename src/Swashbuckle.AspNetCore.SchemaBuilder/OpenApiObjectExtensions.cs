@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public static class OpenApiObjectExtensions
     {

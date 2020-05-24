@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.OpenApi.Any;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class PropertiesGraphTransformer
     {

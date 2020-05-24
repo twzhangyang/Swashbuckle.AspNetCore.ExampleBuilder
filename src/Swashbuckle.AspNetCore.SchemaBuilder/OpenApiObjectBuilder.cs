@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using Microsoft.OpenApi.Any;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class OpenApiObjectBuilder : IOpenApiObjectBuilder
     {

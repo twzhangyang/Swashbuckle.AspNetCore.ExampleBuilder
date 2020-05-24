@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests.Models
+namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 {
     public class Pet
     {

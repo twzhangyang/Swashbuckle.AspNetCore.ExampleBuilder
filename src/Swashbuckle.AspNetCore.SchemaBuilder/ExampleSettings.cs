@@ -1,4 +1,4 @@
-namespace Swashbuckle.AspNetCore.ExampleBuilder
+namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class ExampleSettings
     {

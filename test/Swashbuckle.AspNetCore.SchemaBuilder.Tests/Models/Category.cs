@@ -1,4 +1,4 @@
-namespace Swashbuckle.AspNetCore.ExampleBuilder.Tests.Models
+namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 {
     public class Category
     {

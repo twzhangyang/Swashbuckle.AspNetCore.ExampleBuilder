@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Petstore", "src\Petstore\Pe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1ACD3097-0D32-41F9-B9AA-6D211718472F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.AspNetCore.ExampleBuilder.Tests", "test\Swashbuckle.AspNetCore.ExampleBuilder.Tests\Swashbuckle.AspNetCore.ExampleBuilder.Tests.csproj", "{90FE2707-2635-447A-881C-6A1DCB6FA2B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.AspNetCore.SchemaBuilder.Tests", "test\Swashbuckle.AspNetCore.SchemaBuilder.Tests\Swashbuckle.AspNetCore.SchemaBuilder.Tests.csproj", "{90FE2707-2635-447A-881C-6A1DCB6FA2B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.AspNetCore.ExampleBuilder", "src\Swashbuckle.AspNetCore.ExampleBuilder\Swashbuckle.AspNetCore.ExampleBuilder.csproj", "{C547E207-9869-4385-9B0B-22D3DCA0C0F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.AspNetCore.SchemaBuilder", "src\Swashbuckle.AspNetCore.SchemaBuilder\Swashbuckle.AspNetCore.SchemaBuilder.csproj", "{C547E207-9869-4385-9B0B-22D3DCA0C0F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
