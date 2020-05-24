@@ -5,9 +5,9 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public static class OpenApiObjectExtensions
     {
-       public static void AddSwaggerExampleBuilder(this IServiceCollection services, Action<ExampleSettings> configure = null)
+       public static void AddSwaggerSchemaBuilder(this IServiceCollection services, Action<SchemaSettings> configure = null)
        {
-           var settings = new ExampleSettings();
+           var settings = new SchemaSettings();
            configure?.Invoke(settings);
 
            services.AddSingleton(c => settings);

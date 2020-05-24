@@ -1,8 +1,8 @@
 namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
-    public class ExampleSettings
+    public class SchemaSettings
     {
-        public ExampleSettings()
+        public SchemaSettings()
         {
             CamelCase = true;
         } 

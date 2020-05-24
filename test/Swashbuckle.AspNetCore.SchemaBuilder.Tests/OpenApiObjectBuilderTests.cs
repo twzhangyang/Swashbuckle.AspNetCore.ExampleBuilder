@@ -14,7 +14,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             var pet = new PetCreator().Create();
             
             //Act
-            var openApiObject = new OpenApiObjectBuilder(new PropertiesGraphTransformer(new ExampleSettings())).Build(pet);
+            var openApiObject = new OpenApiObjectBuilder(new PropertiesGraphTransformer(new SchemaSettings())).Build(pet);
             
             //Assert
             Assert.AreEqual(openApiObject.Count, 6);

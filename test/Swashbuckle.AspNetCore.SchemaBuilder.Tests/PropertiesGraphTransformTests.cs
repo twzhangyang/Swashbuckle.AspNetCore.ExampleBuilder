@@ -18,7 +18,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             var root = new OpenApiObject();
 
             //Act
-            new PropertiesGraphTransformer(new ExampleSettings()).TransformToOpenApiObject(graph, root, null);
+            new PropertiesGraphTransformer(new SchemaSettings()).TransformToOpenApiObject(graph, root, null);
 
             //Assert
             root.Count.Should().Be(6);

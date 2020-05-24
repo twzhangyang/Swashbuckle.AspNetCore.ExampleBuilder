@@ -8,7 +8,7 @@ dotnet pack ./src/Swashbuckle.AspNetCore.SchemaBuilder/Swashbuckle.AspNetCore.Sc
 # nuget verify -Signatures ./artifacts/Swashbuckle.AspNetCore.SchemaBuilder.1.3.0.nupkg -CertificateFingerprint "b2358a567a375ff8fddc48c893e30694f952e2f4fe238a8041f7166b43e0f9a7" -Verbosity detailed
 
 # push nuget
-# dotnet nuget push ./artifacts/Swashbuckle.AspNetCore.SchemaBuilder.1.1.0.nupkg -k $1 -s https://api.nuget.org/v3/index.json
+# dotnet nuget push ./artifacts/Swashbuckle.AspNetCore.SchemaBuilder.1.3.1.nupkg -k $1 -s https://api.nuget.org/v3/index.json
 
 #
 #nuget setApiKey * 

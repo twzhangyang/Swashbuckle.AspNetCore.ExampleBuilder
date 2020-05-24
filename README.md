@@ -1,7 +1,7 @@
 ![.NET Core](https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder/workflows/.NET%20Core/badge.svg)
-![Nuget](https://img.shields.io/nuget/v/Swashbuckle.AspNetCore.ExampleBuilder)
+![Nuget](https://img.shields.io/nuget/v/Swashbuckle.AspNetCore.SchemaBuilder)
 
-## Why Swashbuckle.AspNetCore.ExampleBuilder
+## Why Swashbuckle.AspNetCore.SchemaBuilder
 
 As we know, swagger is a good tool that help us document apis,  api consumers can use it complete api integration. 
 Generally the more swagger was written completed the more convenient  for API consumers.
@@ -105,17 +105,17 @@ public class PetCreator
 * Install Nuget package:
 
 ```
-dotnet add package Swashbuckle.AspNetCore.ExampleBuilder --version 1.0.1
+dotnet add package Swashbuckle.AspNetCore.SchemaBuilder --version 1.3.0
 ```
 
 * Register services in DI container:
 ``` c#
-services.AddSwaggerExampleBuilder();
+services.AddSwaggerSchemaBuilder();
 ```
 
 * Disable camelcase 
 ``` c#
-services.AddSwaggerExampleBuilder(s => {
+services.AddSwaggerSchemaBuilder(s => {
     s.Camelcase = false;
 })
 ```

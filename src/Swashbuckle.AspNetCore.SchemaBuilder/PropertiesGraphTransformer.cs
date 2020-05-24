@@ -6,9 +6,9 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class PropertiesGraphTransformer
     {
-        private readonly ExampleSettings _settings;
+        private readonly SchemaSettings _settings;
 
-        public PropertiesGraphTransformer(ExampleSettings settings)
+        public PropertiesGraphTransformer(SchemaSettings settings)
         {
             _settings = settings;
         }
