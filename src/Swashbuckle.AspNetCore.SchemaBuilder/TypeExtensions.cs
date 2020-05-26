@@ -40,8 +40,12 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 
             return type.IsPrimitive
                    || type.IsEnum
+                   || type == typeof(DateTimeOffset)
+                   || type == typeof(DateTime)
+                   || type == typeof(byte[])
                    || type == typeof(string)
                    || type == typeof(decimal);
+            
         }
     }
 }

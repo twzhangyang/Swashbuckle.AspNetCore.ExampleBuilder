@@ -41,7 +41,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
         {
             if (t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                t = t.GetGenericArguments()[0];
+                t = typeof(object);
             }
             
             SimpleValueProperties.Add(new Property(name, value, t));

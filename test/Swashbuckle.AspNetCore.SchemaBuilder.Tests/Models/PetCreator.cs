@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 {
@@ -10,6 +12,17 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
             {
                 Id = 123,
                 Name = "dog",
+                BinaryValue = Encoding.UTF8.GetBytes("hello"),
+                ByteValue = new byte(),
+                DecimalValue = 123.12m,
+                DoubleValue = 123.12d,
+                FloatValue = 123.1f,
+                Int64Value = 123,
+                IntValue = 123,
+                IsDog = false,
+                NullValue = null,
+                DateTimeValue = DateTime.Now.Date,
+                DateTimeOffsetValue = DateTimeOffset.Now,
                 Category = new Category
                 {
                     Id = 1234,
@@ -23,14 +36,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
                 Status = Pet.StatusEnum.AvailableEnum,
                 Tags = new List<Tag>
                 {
-                    new Tag
-                    {
-                        Id = 1111, Name = "tag1", Item = new Item {Name = "item1", Value = "value1"},
-                        Items = new List<Item>
-                        {
-                            new Item {Name = "name11", Value = "value11"}
-                        }
-                    },
+                    new Tag {Id = 1111, Name = "tag1"},
                     new Tag {Id = 2222, Name = "tag2"}
                 }
             };

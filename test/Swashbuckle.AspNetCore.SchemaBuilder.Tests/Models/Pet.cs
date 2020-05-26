@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -28,6 +29,31 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 
             [EnumMember(Value = "sold")] SoldEnum = 3
         }
+        
+        
+        public int IntValue { get; set; }
+        
+        public Int64 Int64Value { get; set; }
+        
+        public int? NullValue { get; set; }
+        
+        public bool IsDog { get; set; }
+        
+        public float FloatValue { get; set; }
+        
+        public Decimal DecimalValue { get; set; }
+        
+        public Double DoubleValue { get; set; } 
+        
+        public byte ByteValue { get; set; }
+
+        public byte[] BinaryValue { get; set; }
+        
+        public DateTime DateTimeValue { get; set; }
+        
+        public DateTimeOffset DateTimeOffsetValue { get; set; }
+        
+        // public Dictionary<string, string> DictionaryValue { get; set; }
 
     }
 }

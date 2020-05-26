@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Text;
 using Microsoft.OpenApi.Any;
 
 namespace Swashbuckle.AspNetCore.SchemaBuilder
@@ -92,15 +93,25 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
             {
                 return new OpenApiDateTime(Convert.ToDateTime(value));
             }
+            
+            if (t == typeof(DateTimeOffset))
+            {
+                return new OpenApiDateTime((DateTimeOffset)value);
+            }
 
             if (t == typeof(long))
             {
                 return new OpenApiLong(Convert.ToInt64(value));
             }
-
+            
             if (t == typeof(Int64))
             {
                 return new OpenApiLong(Convert.ToInt64(value));
+            }
+            
+            if (t == typeof(Single))
+            {
+                return new OpenApiDouble(Convert.ToSingle(value));
             }
 
             if (t == typeof(decimal))
@@ -120,7 +131,12 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 
             if (t == typeof(byte))
             {
-                return new OpenApiByte(Convert.ToByte(value));
+                return new OpenApiByte((byte)value);
+            }
+            
+            if (t == typeof(byte[]))
+            {
+                return new OpenApiBinary((byte[])value);
             }
 
             return new OpenApiObject();

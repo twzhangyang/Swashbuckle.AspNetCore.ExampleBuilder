@@ -21,7 +21,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             new PropertiesGraphTransformer(new SchemaSettings()).TransformToOpenApiObject(graph, root, null);
 
             //Assert
-            root.Count.Should().Be(6);
+            root.Count.Should().Be(17);
             root.Keys.Contains("id");
             root.Keys.Contains("name");
             root.Keys.Contains("status");

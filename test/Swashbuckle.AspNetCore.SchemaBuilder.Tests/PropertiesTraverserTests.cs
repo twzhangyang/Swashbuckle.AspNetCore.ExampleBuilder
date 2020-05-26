@@ -18,7 +18,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             //Assert
             graph.ArrayProperties.Count.Should().Be(2);
             graph.ObjectProperties.Count.Should().Be(1);
-            graph.SimpleValueProperties.Count.Should().Be(3);
+            graph.SimpleValueProperties.Count.Should().Be(14);
         }
 
         [Test]
@@ -96,11 +96,10 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             var tags = graph.ArrayProperties["Tags"];
             tags.Should().HaveCount(2);
             tags[0].ObjectProperties.Should().HaveCount(1);
-            tags[0].ObjectProperties[0].SimpleValueProperties.Should().HaveCount(2);
+            tags[0].ObjectProperties[0].SimpleValueProperties.Should().HaveCount(4);
             tags[0].ObjectProperties[0].SimpleValueProperties[0].PropertyName.Should().Be("Id");
             tags[0].ObjectProperties[0].SimpleValueProperties[0].PropertyType.Should().Be(typeof(long));
             tags[0].ObjectProperties[0].SimpleValueProperties[0].PropertyValue.Should().Be(1111);
-
         }
     }
 }

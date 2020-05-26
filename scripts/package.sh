@@ -12,3 +12,5 @@ dotnet pack ./src/Swashbuckle.AspNetCore.SchemaBuilder/Swashbuckle.AspNetCore.Sc
 
 #
 #nuget setApiKey * 
+
+dotnet nuget push ./artifacts/Swashbuckle.AspNetCore.SchemaBuilder.1.4.0.nupkg -k oy2llmevpr2uckn2x2vafcrjhj7yefde7o5ijqveaezp44 -s https://api.nuget.org/v3/index.json
