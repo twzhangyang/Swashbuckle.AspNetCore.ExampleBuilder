@@ -5,6 +5,7 @@
 
 .DS_Store
 .idea
+scripts/package.sh
 
 # User-specific files
 *.rsuser
