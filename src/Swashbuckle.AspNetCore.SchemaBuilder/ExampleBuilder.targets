@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>Swagger tools for generating example on ASP.NET Core</Description>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <VersionPrefix>1.4.0</VersionPrefix>
+    <VersionPrefix>1.5.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>yrzhang</Authors>
     <LangVersion>7.3</LangVersion>
