@@ -105,7 +105,7 @@ public class PetCreator
 * Install Nuget package:
 
 ```
-dotnet add package Swashbuckle.AspNetCore.SchemaBuilder --version 1.5.0
+dotnet add package Swashbuckle.AspNetCore.SchemaBuilder --version 1.6.0
 ```
 
 * Register services in DI container:
