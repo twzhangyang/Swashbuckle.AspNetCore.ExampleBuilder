@@ -14,10 +14,10 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
             var pet = new PetCreator().Create();
             
             //Act
-            var openApiObject = new OpenApiObjectBuilder(new PropertiesGraphTransformer(new SchemaSettings())).Build(pet);
+            var openApiObject = new OpenApiObjectBuilder(new OpenApiObjectConverter(new SchemaSettings())).Build(pet);
             
             //Assert
-            Assert.AreEqual(openApiObject.Count, 17);
+            Assert.AreEqual(openApiObject.Count, 16);
         }
     }
 }

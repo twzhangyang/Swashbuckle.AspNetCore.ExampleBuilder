@@ -12,7 +12,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 
            services.AddSingleton(c => settings);
            services.AddTransient<IOpenApiObjectBuilder, OpenApiObjectBuilder>();
-           services.AddTransient<PropertiesGraphTransformer>();
+           services.AddTransient<OpenApiObjectConverter>();
        } 
     }
 }

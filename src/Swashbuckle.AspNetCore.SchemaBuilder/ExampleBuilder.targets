@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Description>Swagger tools for generating example on ASP.NET Core</Description>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <VersionPrefix>1.5.0</VersionPrefix>
+    <VersionPrefix>1.5.1</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>yrzhang</Authors>
     <LangVersion>7.3</LangVersion>
     <NoWarn>$(NoWarn);1701;1702;1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <PackageProjectUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.SchemaBuilder</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder</PackageProjectUrl>
     <Copyright>Copyright (c) .NET Foundation and contributors 2020</Copyright>
-    <RepositoryUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.SchemaBuilder</RepositoryUrl>
+    <RepositoryUrl>https://github.com/twzhangyang/Swashbuckle.AspNetCore.ExampleBuilder</RepositoryUrl>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>swashbuckle;ISchemaFilter;exmaple builder</PackageTags>

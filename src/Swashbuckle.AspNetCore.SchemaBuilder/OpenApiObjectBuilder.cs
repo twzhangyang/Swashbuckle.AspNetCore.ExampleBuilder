@@ -6,21 +6,16 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public class OpenApiObjectBuilder : IOpenApiObjectBuilder
     {
-        private readonly PropertiesGraphTransformer _graphTransformer;
+        private readonly OpenApiObjectConverter _converter;
 
-        public OpenApiObjectBuilder(PropertiesGraphTransformer graphTransformer)
+        public OpenApiObjectBuilder(OpenApiObjectConverter converter)
         {
-            _graphTransformer = graphTransformer;
+            _converter = converter;
         }
         
         public OpenApiObject Build(object o)
         {
-            var propertiesGraph = new PropertiesTraverser(o).Walk();
-            var openApiObject = new OpenApiObject();
-
-            _graphTransformer.TransformToOpenApiObject(propertiesGraph, openApiObject, null);
-
-            return openApiObject;
+            return _converter.Convert(o);
         }
     }
 }

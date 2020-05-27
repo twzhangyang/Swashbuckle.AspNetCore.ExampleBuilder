@@ -8,6 +8,12 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 {
     public class Pet
     {
+        public Pet()
+        {
+            // DictionaryValue = new Dictionary<int, string>();
+            // DictionaryValue2 = new Dictionary<string, Category>();
+        }
+        
         public long? Id { get; set; }
 
         public Category Category { get; set; }
@@ -47,13 +53,14 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
         
         public byte ByteValue { get; set; }
 
-        public byte[] BinaryValue { get; set; }
+        // public byte[] BinaryValue { get; set; }
         
         public DateTime DateTimeValue { get; set; }
         
         public DateTimeOffset DateTimeOffsetValue { get; set; }
         
-        // public Dictionary<string, string> DictionaryValue { get; set; }
-
+        // public Dictionary<int, string> DictionaryValue { get; set; }
+        
+        // public Dictionary<string, Category> DictionaryValue2 { get; set; } 
     }
 }

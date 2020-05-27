@@ -33,19 +33,28 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 
         public static bool IsSimpleType(this Type type)
         {
-            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
+            if (type.IsNullablePrimitiveType())
             {
-                return IsSimpleType(type.GetGenericArguments()[0]);
+                return true;
             }
-
+            
             return type.IsPrimitive
                    || type.IsEnum
                    || type == typeof(DateTimeOffset)
                    || type == typeof(DateTime)
-                   || type == typeof(byte[])
                    || type == typeof(string)
                    || type == typeof(decimal);
             
+        }
+
+        public static bool IsNullablePrimitiveType(this Type type)
+        {
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
