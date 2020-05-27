@@ -31,37 +31,15 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
 
         private void ConvertRec(string name, object value, Type type, OpenApiObject openApiObject)
         {
-            if (type.IsListType())
+            if (type.IsArray)
             {
-                if (value == null)
-                {
-                    openApiObject.Add(name, new OpenApiNull());
-                    return;
-                }
-                
+                var nestedType = type.GetElementType();
+                CreateArrayOrListObject(name, value, type, nestedType, openApiObject);
+            }
+            else if (type.IsListType())
+            {
                 var nestedType = type.GetGenericArguments()[0];
-                var arrayObject = new OpenApiArray();
-                foreach (var item in value as IEnumerable)
-                {
-                    if (nestedType.IsSimpleType())
-                    {
-                        var node = CreateOpenApiObject(nestedType, item);
-                        arrayObject.Add(node);
-                    }
-                    else
-                    {
-                        var arrayItemObject = new OpenApiObject();
-                        var properties = nestedType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-                        foreach (var property in properties)
-                        {
-                            var nodeValue = property.GetValue(item);
-                            ConvertRec(GetName(property.Name), nodeValue, property.PropertyType, arrayItemObject);
-                        }
-                        arrayObject.Add(arrayItemObject);
-                    }
-                }
-                
-                openApiObject.Add(GetName(name), arrayObject);
+                CreateArrayOrListObject(name, value, type, nestedType, openApiObject);
             }
             else if (!type.IsSimpleType())
             {
@@ -70,7 +48,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
                     openApiObject.Add(name, new OpenApiNull());
                     return;
                 }
-                
+
                 var node = new OpenApiObject();
 
                 foreach (var property in value.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
@@ -87,6 +65,40 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
                 var node = CreateOpenApiObject(type, value);
                 openApiObject.Add(name, node);
             }
+        }
+
+        private void CreateArrayOrListObject(string name, object value, Type type, Type nestedType,
+            OpenApiObject openApiObject)
+        {
+            if (value == null)
+            {
+                openApiObject.Add(name, new OpenApiNull());
+                return;
+            }
+
+            var arrayObject = new OpenApiArray();
+            foreach (var item in value as IEnumerable)
+            {
+                if (nestedType.IsSimpleType())
+                {
+                    var node = CreateOpenApiObject(nestedType, item);
+                    arrayObject.Add(node);
+                }
+                else
+                {
+                    var arrayItemObject = new OpenApiObject();
+                    var properties = nestedType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                    foreach (var property in properties)
+                    {
+                        var nodeValue = property.GetValue(item);
+                        ConvertRec(GetName(property.Name), nodeValue, property.PropertyType, arrayItemObject);
+                    }
+
+                    arrayObject.Add(arrayItemObject);
+                }
+            }
+
+            openApiObject.Add(GetName(name), arrayObject);
         }
 
         private IOpenApiAny CreateOpenApiObject(Type type, object value)

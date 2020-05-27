@@ -53,7 +53,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
         
         public byte ByteValue { get; set; }
 
-        // public byte[] BinaryValue { get; set; }
+        public byte[] BinaryValue { get; set; }
         
         public DateTime DateTimeValue { get; set; }
         

@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
 {
-    public class OpenApiObjectConverterTest3
+    public class OpenApiObjectConverterListTests
     {
         [Test]
         public void ShouldConvertListProperty()

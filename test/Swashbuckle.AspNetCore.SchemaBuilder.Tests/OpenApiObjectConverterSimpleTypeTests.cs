@@ -9,7 +9,7 @@ using Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models;
 
 namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests
 {
-    public class OpenApiObjectConverterTests
+    public class OpenApiObjectConverterSimpleTypeTests
     {
         [Test]
         public void ShouldConvertStringType()

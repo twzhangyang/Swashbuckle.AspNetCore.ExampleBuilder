@@ -12,6 +12,7 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
             {
                 Id = 123,
                 Name = "dog",
+                BinaryValue = Encoding.UTF8.GetBytes("hello"),
                 ByteValue = new byte(),
                 DecimalValue = 123.12m,
                 DoubleValue = 123.12d,
