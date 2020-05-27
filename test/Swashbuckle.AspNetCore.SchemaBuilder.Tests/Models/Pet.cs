@@ -8,12 +8,6 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
 {
     public class Pet
     {
-        public Pet()
-        {
-            // DictionaryValue = new Dictionary<int, string>();
-            // DictionaryValue2 = new Dictionary<string, Category>();
-        }
-        
         public long? Id { get; set; }
 
         public Category Category { get; set; }
@@ -36,7 +30,6 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
             [EnumMember(Value = "sold")] SoldEnum = 3
         }
         
-        
         public int IntValue { get; set; }
         
         public Int64 Int64Value { get; set; }
@@ -58,9 +51,5 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder.Tests.Models
         public DateTime DateTimeValue { get; set; }
         
         public DateTimeOffset DateTimeOffsetValue { get; set; }
-        
-        // public Dictionary<int, string> DictionaryValue { get; set; }
-        
-        // public Dictionary<string, Category> DictionaryValue2 { get; set; } 
     }
 }

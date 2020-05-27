@@ -41,6 +41,10 @@ namespace Swashbuckle.AspNetCore.SchemaBuilder
                 var nestedType = type.GetGenericArguments()[0];
                 CreateArrayOrListObject(name, value, type, nestedType, openApiObject);
             }
+            else if (type.IsDictionary())
+            {
+                // fix it later
+            }
             else if (!type.IsSimpleType())
             {
                 if (value == null)

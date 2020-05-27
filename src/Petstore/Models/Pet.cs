@@ -15,13 +15,12 @@ namespace Petstore.Models
     /// </summary>
     [DataContract]
     // [SwaggerSchemaFilter(typeof(PetSchemaFilter))]
-    // [SwaggerSchemaFilter(typeof(PetSchemaByBuilderFilter))]
+    [SwaggerSchemaFilter(typeof(PetSchemaByBuilderFilter))]
     public partial class Pet
     {
         public Pet()
         {
             DictionaryValue = new Dictionary<int, string>();
-            DictionaryValue2 = new Dictionary<int, Category>();
         }
         
         public long? Id { get; set; }
@@ -49,8 +48,6 @@ namespace Petstore.Models
         public DateTimeOffset DateTimeOffsetValue { get; set; }
         
         public Dictionary<int, string> DictionaryValue { get; set; }
-        
-        public Dictionary<int, Category> DictionaryValue2 { get; set; }
 
         [Required]
         public string Name { get; set; }

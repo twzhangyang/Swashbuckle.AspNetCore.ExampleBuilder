@@ -1,10 +1,21 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Swashbuckle.AspNetCore.SchemaBuilder
 {
     public static class TypeExtensions
     {
+        public static bool IsDictionary(this Type type)
+        {
+            if (!type.IsGenericType)
+            {
+                return false;
+            }
+
+            return typeof(IDictionary).IsAssignableFrom(type);
+        }
+        
         public static bool IsListType(this Type type)
         {
             if (!type.IsGenericType)

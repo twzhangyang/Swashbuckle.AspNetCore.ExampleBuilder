@@ -36,7 +36,11 @@ namespace Petstore.Models
                         ["id"] = new OpenApiLong(222)
                     }
                 },
-                ["status"] = new OpenApiString(Pet.StatusEnum.AvailableEnum.ToString())
+                ["status"] = new OpenApiString(Pet.StatusEnum.AvailableEnum.ToString()),
+                ["dictionaryValue"] = new OpenApiObject()
+                {
+                    ["additionalProperties"] = new OpenApiString("hello")
+                }
             };
         }
     }
